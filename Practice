@@ -1,1 +1,19 @@
-
+#지뢰 찾기 21 줄 
+col,row = map(int, input().split()) # col : 가로 row : 세로
+li = []
+for i in range(row):
+    li.append(list(input()))
+for j in range(row):
+    for k in range(col):
+        cnt = 0              #주위 지뢰 수
+        if li[j][k] == '.':
+            for x in range(j-1, j+2): 
+                for y in range(k -1, k +2):  # li[i][j] 중심으로 나머지 블록 확인
+                    if not ( x < 0 or y < 0 or x >=row or y >=col): # 이 조건이 아니면 실행
+                        if li[x][y] == '*': # 주위가 지뢰인지?
+                            cnt +=1 
+            li[j][k] = cnt # if 문 시작때 .을 주변 지뢰 수로 치환
+            print(li[j][k], end ="") 
+        else:
+            print(li[j][k],end ="") # 지뢰는 그대로 반환
+    print()
