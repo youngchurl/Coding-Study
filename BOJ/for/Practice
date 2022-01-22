@@ -1,0 +1,14 @@
+2022.01.22
+
+# 백준 2739번 구구단
+
+N = int(input()) # N으로 입력값 받기
+for _ in range(1,9+1): print(f"{N} * {_} = {N*_}")
+
+# 백준 10950번 A+B -3
+T = int(input()) # 테스트 케이스의 개수
+for _ in range(T): 
+    a,b = map(int, input().split()) # 각 케이스의 A,B값 입력
+    print(f'{a+b}') # A+B 출력
+    
+
