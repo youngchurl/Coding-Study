@@ -52,6 +52,10 @@ for i in range(1,T+1): # 테스트 케이스 번호 1 부터 시작
     a, b = map(int, input().split()) # a,b 값을 입력
     print(f'Case #{i}: {a} + {b} = {a+b}') 
 
+# 2438번 별찍기 - 1 
+
+# for i in range(1,int(input())+1): print('*'*i)    
+
 # 2439번 별찍기 - 2
 
 n = int(input()) # 별 층 입력
