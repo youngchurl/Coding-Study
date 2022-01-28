@@ -1,0 +1,13 @@
+# 2577번 숫자의 개수
+a = int(input())
+b = int(input())
+c = int(input())
+
+total = str(a*b*c) # 곱셈한 값을 문자 형태로 변환시킨다.
+li = [] # 빈 리스트 생성
+
+for i in range(len(total)):
+    li.append(total[i]) # 문자열 각요소를 리스트에 담는다.
+
+for j in range(10):
+    print(li.count(str(j))) # 각 숫자가 몇 개 있는지 일렬로 출력
