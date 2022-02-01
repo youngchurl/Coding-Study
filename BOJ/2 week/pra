@@ -30,3 +30,46 @@ for _ in range(T):
         else:
             cnt = 0 # X 가 나왔으므로 cnt 초기화
     print(res) # 총 더한 값을 출력한다.
+
+
+# 10828번 스택
+
+import sys
+num = int(sys.stdin.readline()) # 반복 횟수
+li = [] # 스택을 넣어둘 리스트
+
+for _ in range(num):
+
+    order = sys.stdin.readline().split() # 명령 입력 
+
+# push 명령
+    if 'push' in order:
+        li.append(order[1]) # 처음에 단순하게 order[-1]로 해서 틀림
+
+# pop 명령
+    elif 'pop' in order: 
+        if len(li) == 0:
+            print('-1')
+        else:
+            print(li[-1])
+            li.pop(-1)
+    
+# size 명령
+    elif 'size' in order: 
+        print(len(li))
+
+# empty 명령    
+    elif 'empty' in order:
+        if len(li) == 0:
+            print('1')
+        else:
+            print("0")
+
+# top 명령
+    elif 'top' in order :
+        if len(li) == 0:
+            print('-1')
+        else:
+            print(li[-1])
+
+# 시간초과 때문에 input -> sys.stdin.readline() 사용
