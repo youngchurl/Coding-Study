@@ -33,7 +33,11 @@ T = int(input()) # 테스트 케이스 입력
 for _ in range(T):
     n = int(input()) # 테스트 케이스 번호
     arr = list(map(int, input().split())) # 입력값 입력 
-    
+    arr.sort(reverse=True) # 높은 점수 -> 낮은 점수 순으로 배열
+
+    count = Counter(arr).most_common(1) # 최빈값중 최고 점수 하나를 count에 입력
+
+    print(f'#{n} {count[0][0]}') # 2차원 배열 형태이므로 [][]로 꺼낸다.    
     
     
     
@@ -51,15 +55,9 @@ for i in range(len(text)):
     text_li.append(ord(text2[i])-64) # 아스키 코드가 A 65 이렇게 시작을 하기 때문에 64를 빼준다.
 
 for _ in text_li: print(_,end=" ") # 배열 출력
-
     
-    arr.sort(reverse=True) # 높은 점수 -> 낮은 점수 순으로 배열
-
-    count = Counter(arr).most_common(1) # 최빈값중 최고 점수 하나를 count에 입력
-
-    print(f'#{n} {count[0][0]}') # 2차원 배열 형태이므로 [][]로 꺼낸다.
-    
-    # SW 1966번 숫자를 정렬하자.
+   
+# SW 1966번 숫자를 정렬하자.
 
 T = int(input()) # 테스트 케이스 입력받음
 
