@@ -52,3 +52,53 @@ for i in range(a):
     if e == 0:
         to +=1
 print(to)
+
+# 10866번 덱
+from collections import deque
+import sys
+
+input = sys.stdin.readline # 길어서 input으로 정의해놓고 시작
+deq = deque() # 덱을 deq로 지정
+
+for _ in range(int(input())):
+    order = input().split()
+    if 'push_front' in order:
+        deq.appendleft(order[1])
+
+    elif 'push_back' in order:
+        deq.append(order[1])
+
+    elif 'pop_front' in order:
+        if len(deq) == 0:
+            print("-1")
+        else:
+            print(deq[0])
+            deq.popleft()
+
+    elif 'pop_back' in order:
+        if len(deq) == 0:
+            print("-1")
+        else:
+            print(deq[-1])
+            deq.pop()
+
+    elif 'size' in order:
+        print(len(deq))
+    
+    elif 'empty' in order:
+        if len(deq) == 0:
+            print("1")
+        else:
+            print("0")
+
+    elif 'front' in order:
+        if len(deq) == 0:
+            print('-1')
+        else:
+            print(deq[0])
+
+    elif 'back' in order:
+        if len(deq) == 0:
+            print('-1')
+        else:
+            print(deq[-1])
