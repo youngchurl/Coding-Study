@@ -102,3 +102,30 @@ for _ in range(int(input())):
             print('-1')
         else:
             print(deq[-1])
+            
+            
+            
+# 2022.02.08
+
+# BOJ 9013번 괄호
+
+T = int(input())
+for _ in range(T):
+    txt = [i for i in input()]
+    cl = 0
+    cr = 0
+    err = 0
+    for i in range(len(txt)):
+        if txt[i] == "(":
+            cl +=1
+        elif txt[i] == ")":
+            cr +=1
+        if cl < cr :
+            err +=1
+            break
+    if err == 0 and cl == cr:
+        print("YES")
+        
+    else:
+        print("NO")
+    
