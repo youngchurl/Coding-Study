@@ -6,3 +6,18 @@ for i in range(1,tc+1):
     li = [i for i in list(map(int, input().split()))]
     mean = sum(li) / 10
     print(f'#{i} {round(mean)}')
+
+# SW 2070 큰 놈, 작은 놈, 같은 놈
+
+tc = int(input())
+for i in range(1, tc+1):
+    a,b = map(int, input().split())
+    res = ''
+    if a < b:
+        res = '<'
+    elif a == b:
+        res = '='
+    else:
+        res = '>'
+        
+    print(f'#{i} {res}')
