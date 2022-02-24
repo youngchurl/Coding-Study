@@ -71,3 +71,35 @@ for i in range(1,tc+1):
         mon = str(li[4:6])
         day = str(li[6:])
         print(f'#{i} {year}/{mon.zfill(2)}/{day.zfill(2)}')
+
+# 2047 신문 헤드라인
+
+txt = input()
+txt2 = txt.upper()
+print(txt2)
+
+# 2046 스탬프 찍기
+
+mul = int(input())
+print("#"*mul)
+
+# 2043 서랍의 비밀번호
+
+a, b = map(int, input().split())
+cnt = 1
+
+while a !=b:
+    b += 1
+    cnt += 1
+
+print(cnt)
+
+# 2029 몫과 나머지 출력하기
+
+tc = int(input())
+for i in range(1, tc+1):
+    a,b = map(int, input().split())
+    share = a//b
+    remainder = a%b
+
+    print(f'#{i} {share} {remainder}')
