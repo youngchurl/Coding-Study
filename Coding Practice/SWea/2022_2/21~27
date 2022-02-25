@@ -37,6 +37,8 @@ length = len(li) // 2
 li.sort()
 print(f'{li[length]}')
 
+2.24
+
 # 2058 자릿수 더하기
 
 num = input()
@@ -93,6 +95,8 @@ while a !=b:
     cnt += 1
 
 print(cnt)
+
+# 2.25
 
 # 2029 몫과 나머지 출력하기
 
