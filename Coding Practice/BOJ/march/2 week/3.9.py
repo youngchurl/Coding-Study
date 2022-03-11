@@ -23,25 +23,27 @@
 # print(res)
 
 
-import sys
-input = sys.stdin.readline
 
-n, k = map(int, input().split())
-li = [int(input().rstrip()) for _ in range(n)]
-li.sort()
-res = 0
+# import sys
+# input = sys.stdin.readline
 
-l = 1
-r = li[-1]
-while l <= r:
-    mid = (l+r)//2
-    cnt = 0
-    for i in li:
-        cnt += (i//mid)
-    if cnt >=k:
-        l = mid +1
-    else:
-        r = mid -1
+# n, k = map(int, input().split())
+# li = [int(input().rstrip()) for _ in range(n)]
+# li.sort()
+# res = 0
+
+# l = 1
+# r = li[-1]
+# while l <= r:
+#     mid = (l+r)//2
+#     cnt = 0
+#     for i in li:
+#         cnt += (i//mid)
+#     if cnt >=k:
+#         l = mid +1
+#     else:
+#         r = mid -1
     
+# print(r)
 
-print(r)
+
