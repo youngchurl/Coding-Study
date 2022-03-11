@@ -41,3 +41,31 @@
 from collections import deque
 tc = int(input())
 
+for _ in range(tc):
+    n, k = map(int, input().split())
+    li = list(map(int, input().split()))
+    target = li[k]
+    li[k] = 0
+    deq = deque(li)
+    cnt = 1
+    
+    if len(deq) == 1:
+        print(cnt)
+    else:
+        while True:
+            if deq[0] == 0:
+                if target >= max(deq):
+                    break
+                elif target < max(deq):
+                    deq.append(deq[0])
+                    deq.popleft()
+            elif deq[0] != 0 :
+                if deq[0] >= max(deq):
+                    cnt +=1
+                    deq.append(deq[0])
+                    deq.popleft()
+
+                elif deq[0] < max(deq):
+                    deq.append(deq[0])
+                    deq.popleft()
+        print(cnt)
