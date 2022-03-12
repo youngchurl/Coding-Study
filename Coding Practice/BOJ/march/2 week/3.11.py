@@ -38,7 +38,7 @@
 
 # 두 번째 풀이
 
-from collections import deque
+'''from collections import deque
 tc = int(input())
 
 for _ in range(tc):
@@ -68,4 +68,31 @@ for _ in range(tc):
                 elif deq[0] < max(deq):
                     deq.append(deq[0])
                     deq.popleft()
-        print(cnt)
+        print(cnt)'''
+
+# 백준 4949번 균형잡힌 세상
+
+while True:
+    txt = input()
+    if txt == '.':
+        break
+    li = [i for i in txt if i in '[]()']
+    
+    flag = []
+    check = True
+    if li.count('[') != li.count(']') or li.count('(') != li.count(')'):
+        print('no')
+        break
+
+    for i in li:
+        if i == '('or i =='[':
+            flag.append(i)
+
+        else:
+            if flag:
+                if flag[-1] == '(' and flag[-1] !=')':
+                    check = False
+                if flag[-1] == '[' and flag[-1] !=']':
+                    check = False
+            else:
+                
