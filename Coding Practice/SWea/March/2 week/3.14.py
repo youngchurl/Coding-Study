@@ -16,21 +16,21 @@
 #         print(f'#{i} {b}')
 
 # 2번 SW 1288 새로운 불면증 치료법
-# tc = int(input())
-# for i in range(1,tc+1):
-#     num = int(input())
-#     dic = {str(j):0 for j in range(10)}
-#     cnt = 0
-#     n = num
+tc = int(input())
+for i in range(1,tc+1):
+    num = int(input())
+    dic = {str(j):0 for j in range(10)}
+    cnt = 0
+    n = num
 
-#     while 0 in dic.values():
-#         txt_n = str(n)
-#         for k in txt_n:
-#             dic[k] += 1
-#         cnt +=1
-#         n +=num
-#     res = num*cnt
-#     print(f'#{i} {res}')
+    while 0 in dic.values():
+        txt_n = str(n)
+        for k in txt_n:
+            dic[k] += 1
+        cnt +=1
+        n +=num
+    res = num*cnt
+    print(f'#{i} {res}')
 
 '''
 리뷰 : 딕셔너리가 익숙하지 않아서 좀 써보려다가 오래 걸린 문제...
@@ -38,26 +38,26 @@
 '''
 # 3번 SW 1940 가랏! RC카!
 
-# tc = int(input())
+tc = int(input())
 
-# for i in range(1,tc + 1):
-#     res = 0
-#     acc = 0
-#     for _ in range(int(input())):
-#         li = list(map(int, input().split()))
-#         if len(li) == 2 :
-#             o, a=li[0],li[1]
-#         else:
-#             o = li[0]
+for i in range(1,tc + 1):
+    res = 0
+    acc = 0
+    for _ in range(int(input())):
+        li = list(map(int, input().split()))
+        if len(li) == 2 :
+            o, a=li[0],li[1]
+        else:
+            o = li[0]
 
-#         if o == 2:
-#             acc -=a
-#             if acc <0:
-#                 acc = 0
-#         elif o == 1:
-#             acc +=a
-#         res +=acc
-#     print(f'#{i} {res}')
+        if o == 2:
+            acc -=a
+            if acc <0:
+                acc = 0
+        elif o == 1:
+            acc +=a
+        res +=acc
+    print(f'#{i} {res}')
 
 '''
 리뷰 : 처음 문제 시작할때 우려했던대로 명령이 하나일때 두개일때를 
@@ -65,88 +65,88 @@
 '''
 
 # 4번 SW 1945번 간단한 소인수분해
-# tc = int(input())
-# for i in range(1,tc+1):
-#     n = int(input())
-#     li = [2,3,5,7,11]
-#     res = [0 for _ in range(5)]
+tc = int(input())
+for i in range(1,tc+1):
+    n = int(input())
+    li = [2,3,5,7,11]
+    res = [0 for _ in range(5)]
     
 
-#     for j in li:
-#         while n%j == 0:
-#             n //=j
-#             res[li.index(j)] +=1
+    for j in li:
+        while n%j == 0:
+            n //=j
+            res[li.index(j)] +=1
 
-#     print(f'#{i}',*res)
+    print(f'#{i}',*res)
 
 '''
 리뷰 : 어려움없이 풀 수 있는 문제다.
 '''
 # 5번 1946번 간단한 압축 풀기
-# tc = int(input())
-# for i in range(1,tc+1):
-#     print(f"#{i}")
-#     li = []
-#     for _ in range(int(input())):
-#         txt, n = map(str, input().split())
-#         for j in range(int(n)):
-#             li.append(txt)
-#     for k in range(len(li)):
-#         print(li[k],end='')
-#         if k%10 == 9:
-#             print()
-#     print()
+tc = int(input())
+for i in range(1,tc+1):
+    print(f"#{i}")
+    li = []
+    for _ in range(int(input())):
+        txt, n = map(str, input().split())
+        for j in range(int(n)):
+            li.append(txt)
+    for k in range(len(li)):
+        print(li[k],end='')
+        if k%10 == 9:
+            print()
+    print()
 
 '''
 리뷰 : 답이 맞는데 안풀리는 점이 있어서 고민했는데 개행문자 하나 차이였다...
 '''
 
 # 6. SW 1948 날짜 계산기
-# mon = [0,31, 28, 31, 30,31,30,31,31,30,31,30,31]
-# tc = int(input())
-# for i in range(1, tc+1):
-#     sm, sd, em, ed = map(int, input().split())
-#     res = 0
-#     if sm == em:
-#         res = ed - sd +1
-#     else:
-#         res +=sum(mon[sm:em])
-#         res +=(ed - sd)+1
-#     print(f'#{i} {res}')
+mon = [0,31, 28, 31, 30,31,30,31,31,30,31,30,31]
+tc = int(input())
+for i in range(1, tc+1):
+    sm, sd, em, ed = map(int, input().split())
+    res = 0
+    if sm == em:
+        res = ed - sd +1
+    else:
+        res +=sum(mon[sm:em])
+        res +=(ed - sd)+1
+    print(f'#{i} {res}')
 
 '''
 리뷰 : 직관적으로 풀면 어렵지 않다.
 '''
 
 # 7. SW 1959번 두개의 숫자열
-# tc = int(input())
-# for i in range(1,tc+1):
-#     a,b = map(int,input().split())
-#     li1 = list(map(int, input().split()))
-#     li2 = list(map(int, input().split()))
-#     res = []
+tc = int(input())
+for i in range(1,tc+1):
+    a,b = map(int,input().split())
+    li1 = list(map(int, input().split()))
+    li2 = list(map(int, input().split()))
+    res = []
 
-#     if a==b:
-#         for j in range(a):
-#             res +=li1[j]*li2[j]
+    if a==b:
+        for j in range(a):
+            res +=li1[j]*li2[j]
 
-#     elif a>b:
-#         tem = 0
-#         for j in range(a-b+1):
-#             for k in range(b):
-#                 tem +=li1[j+k]*li2[k]
-#             res.append(tem)
-#             tem = 0
+    elif a>b:
+        tem = 0
+        for j in range(a-b+1):
+            for k in range(b):
+                tem +=li1[j+k]*li2[k]
+            res.append(tem)
+            tem = 0
     
-#     else:
-#         tem = 0
-#         for j in range(b-a+1):
-#             for k in range(a):
-#                 tem +=li1[k]*li2[j+k]
-#             res.append(tem)
-#             tem = 0
-#     res.sort(reverse=True)
-#     print(f'#{i} {res[0]}')
+    else:
+        tem = 0
+        for j in range(b-a+1):
+            for k in range(a):
+                tem +=li1[k]*li2[j+k]
+            res.append(tem)
+            tem = 0
+    res.sort(reverse=True)
+    print(f'#{i} {res[0]}')
 
 '''
 리뷰: 구현자체가 어렵진않았는데 이보다 효율적인 코드로 짜야한다면
@@ -154,91 +154,91 @@
 '''
 # 8. SW 1961번 숫자 배열 회전
 
-# def an90(n,mat):
-#     new_mat = []
-#     for i in range(n):
-#         for j in range(n-1,-1,-1):
-#             new_mat.append(mat[j][i])
-#     return new_mat
+def an90(n,mat):
+    new_mat = []
+    for i in range(n):
+        for j in range(n-1,-1,-1):
+            new_mat.append(mat[j][i])
+    return new_mat
 
-# def an180(n,mat):
-#     new_mat = []
-#     for i in range(n-1,-1,-1):
-#         for j in range(n-1,-1,-1):
-#             new_mat.append(mat[i][j])
-#     return new_mat
+def an180(n,mat):
+    new_mat = []
+    for i in range(n-1,-1,-1):
+        for j in range(n-1,-1,-1):
+            new_mat.append(mat[i][j])
+    return new_mat
 
-# def an270(n,mat):
-#     new_mat = []
-#     for i in range(n-1,-1,-1):
-#         for j in range(n):
-#             new_mat.append(mat[j][i])
-#     return new_mat
+def an270(n,mat):
+    new_mat = []
+    for i in range(n-1,-1,-1):
+        for j in range(n):
+            new_mat.append(mat[j][i])
+    return new_mat
 
-# tc = int(input())
-# for t in range(1,tc+1):
-#     n = int(input())
-#     mat = []
-#     for _ in range(n):
-#         mat.append(list(map(int,input().split())))
+tc = int(input())
+for t in range(1,tc+1):
+    n = int(input())
+    mat = []
+    for _ in range(n):
+        mat.append(list(map(int,input().split())))
     
-#     a90 = an90(n,mat)
-#     a180 = an180(n,mat)
-#     a270 = an270(n,mat)
-#     print(f'#{t}')
-#     for i in range(n):
-#         a = a90[n*i:n*(i+1)]
-#         b = a180[n*i:n*(i+1)]
-#         c = a270[n*i:n*(i+1)]
-#         for j in a:
-#             print(j,end='')
-#         print(' ',end='')
-#         for j in b:
-#             print(j,end='')
-#         print(' ',end='')
-#         for j in c:
-#             print(j,end='')
-#         print()
+    a90 = an90(n,mat)
+    a180 = an180(n,mat)
+    a270 = an270(n,mat)
+    print(f'#{t}')
+    for i in range(n):
+        a = a90[n*i:n*(i+1)]
+        b = a180[n*i:n*(i+1)]
+        c = a270[n*i:n*(i+1)]
+        for j in a:
+            print(j,end='')
+        print(' ',end='')
+        for j in b:
+            print(j,end='')
+        print(' ',end='')
+        for j in c:
+            print(j,end='')
+        print()
 
 '''
 리뷰 : 함수를 본격적으로 써본것도 처음이고, range에서 reversed(range(n))으로
 사용이 가능하다는걸 처음으로 알 수 있어서 배울점이 많은 문제였다. 
 '''
 
-# 8. SW 1974번 스도쿠 검증
-# tc = int(input())
-# for t in range(1,tc+1):
-#     check = [i for i in range(1,10)] # 정답지
-#     check = set(check)
-#     res = 1
-#     mat = []
-#     # 스도쿠 제작
-#     for _ in range(9):
-#         mat.append(list(map(int, input().split())))
+# 9. SW 1974번 스도쿠 검증
+tc = int(input())
+for t in range(1,tc+1):
+    check = [i for i in range(1,10)] # 정답지
+    check = set(check)
+    res = 1
+    mat = []
+    # 스도쿠 제작
+    for _ in range(9):
+        mat.append(list(map(int, input().split())))
 
-#     for p in range(9):
-#         if set(mat[p]) != check:
-#             res = 0
-#             break
+    for p in range(9):
+        if set(mat[p]) != check:
+            res = 0
+            break
 
-#     if res == 1:
-#         col_mat = list(map(list, zip(*mat)))
-#         for q in range(9):
-#             if set(col_mat[q]) != check:
-#                 res = 0
-#                 break
+    if res == 1:
+        col_mat = list(map(list, zip(*mat)))
+        for q in range(9):
+            if set(col_mat[q]) != check:
+                res = 0
+                break
 
-#         for i in range(3):
-#             for l in range(3):
-#                 tem = []
-#                 for j in range(3):
-#                     for k in range(3):
-#                         tem.append(mat[3*i+j][3*l+k])
+        for i in range(3):
+            for l in range(3):
+                tem = []
+                for j in range(3):
+                    for k in range(3):
+                        tem.append(mat[3*i+j][3*l+k])
 
-#                 if set(tem) != check:
-#                     res = 0
-#                     break
-#     print(f'#{t} {res}')
+                if set(tem) != check:
+                    res = 0
+                    break
+    print(f'#{t} {res}')
 
 '''
 리뷰: 스터디할때 풀어봤던 문제임에도 이번에 푸는데 엄청 어렵게 느껴졌다...

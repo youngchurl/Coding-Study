@@ -25,7 +25,7 @@ visited = [False]*9
 dfs(graph, 2, visited)
 '''
 
-# BFS 구현
+'''# BFS 구현
 from collections import deque
 
 def bfs(graph, start, visited):
@@ -56,4 +56,6 @@ graph = [
 ]
 visited = [False]*9
 
-bfs(graph, 1, visited)
+bfs(graph, 1, visited)'''
+
+# 실전문제 3 음료수 얼려 먹기
