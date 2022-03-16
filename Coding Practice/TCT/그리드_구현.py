@@ -159,41 +159,40 @@
 
 # 이코테 4장 실전문제 게임개발
 
-n,m = map(int,input().split())
-x,y,d = map(int,input().split())
-# 초기 방향 설정시 사용
-dic = {0:0, 1:3, 2:2, 3:1}
-s = dic[d]
-# 나아갈 방향 북,서,남,동
-di = [(0,-1), (-1,0),(0,1),(1,0)] 
-mat =[list(map(int, input().split())) for _ in range(n)] # 맵 만들기
+# n,m = map(int,input().split())
+# x,y,d = map(int,input().split())
+# # 초기 방향 설정시 사용
+# dic = {0:0, 1:3, 2:2, 3:1}
+# s = dic[d]
+# # 나아갈 방향 북,서,남,동
+# di = [(0,-1), (-1,0),(0,1),(1,0)] 
+# mat =[list(map(int, input().split())) for _ in range(n)] # 맵 만들기
 
-mat[x][y] = 1 # 한번 지나간 곳은 바다로 만든다.
-lo =[x,y] # 케릭터 위치
-res = 1 # 밟고 있는땅 포함
-cnt = 1 
+# mat[x][y] = 1 # 한번 지나간 곳은 바다로 만든다.
+# lo =[x,y] # 케릭터 위치
+# res = 1 # 밟고 있는땅 포함
+# cnt = 1 
 
-while True:
-    lo[0] +=di[s][0]
-    lo[1] +=di[s][1]
-    if mat[lo[0]][lo[1]] ==1:
-        # 방향이 옳지 않기때문에 다시 뒤로 돌아간다.
-        lo[0] -=di[s][0]
-        lo[1] -=di[s][1]
+# while True:
+#     lo[0] +=di[s][0]
+#     lo[1] +=di[s][1]
+#     if mat[lo[0]][lo[1]] ==1:
+#         # 방향이 옳지 않기때문에 다시 뒤로 돌아간다.
+#         lo[0] -=di[s][0]
+#         lo[1] -=di[s][1]
 
-        cnt +=1# 방향 전환할때마다 1씩증가
-        s +=1 # 방향을 바꿈
-        s %=4 
+#         cnt +=1# 방향 전환할때마다 1씩증가
+#         s +=1 # 방향을 바꿈
+#         s %=4 
 
-        if cnt ==4:
-            break
-    else:
-        mat[lo[0]][lo[1]] =1 # 땅을 밟았기 때문에 초기화
-        cnt = 0 # 방향 cnt도 초기화
-        res +=1
-print(res)
+#         if cnt ==4:
+#             break
+#     else:
+#         mat[lo[0]][lo[1]] =1 # 땅을 밟았기 때문에 초기화
+#         cnt = 0 # 방향 cnt도 초기화
+#         res +=1
+# print(res)
 
 '''
 리뷰: 난이도가 막 어렵진 않았는데, 중간에 실수를 해서 문제가 제대로 안풀렸다..
 '''
-

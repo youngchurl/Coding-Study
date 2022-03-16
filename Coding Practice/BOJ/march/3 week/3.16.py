@@ -164,12 +164,3 @@ for _ in range(int(sys.stdin.readline().rstrip())):
 '''
 리뷰 : 그냥 무난하게 풀 수 있던 문제
 '''
-
-n = int(input())
-li = [1,2,3,4,2,3,4,3,4,4]
-i = -1
-for _ in range(n):
-    i+=1
-    i%=10
-
-print(li[i])
