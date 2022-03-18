@@ -1,9 +1,10 @@
 # 1. 모험가 길드
 # n = int(input())
-# li = list(map(int, input().split()))
-# li.sort()
+# li = list(map(int, input().split())) # 1 2 2 2 3
+# li.sort() # 낮은 순 정렬
 # cnt = 0
-# tem = 1
+# tem = 1 # 그룹 사람
+
 # for i in range(n):
 #     if li[i] == tem:
 #         tem =1
@@ -19,10 +20,12 @@
 
 # 2. 곱하기 혹은 더하기
 # txt = input()
-# txt2 = 1
-# for i in txt:
-#     if i != '0':
+# txt2 = int(txt[0])
+# for i in txt[1:]:
+#     if i == '0' or i !='1' :
 #         txt2 *=int(i)
+#     if i == '1':
+#         txt2 +=int(i)
 # print(txt2)
 '''
 리뷰 : 간단하다 생각되는 문제
@@ -121,37 +124,37 @@
 합계: 28.1 / 100.0
 '''
 
-from math import radians
+# from math import radians
 
 
-def solution(food_times, k):
-    answer = 1
-    dic = {j+1: t for j,t in enumerate(food_times)}
-    le = len(food_times)
-    r = len(food_times)
-    for _ in range(k):
-        if le == 0:
-            answer = -1
-            break
-        while True:
-            if dic[answer] !=0:
-                dic[answer] -=1
-                le -=1
-                answer +=1
-                answer %=(r + 1)
-                break
-            else:
-                answer +=1        
-                answer %=(r + 1) 
-    if answer != -1:
-        while True:     
-            if dic[answer] !=0:
-                answer +=1
-                answer %=(r + 1)
-                break
-            else:
-                answer +=1        
-                answer %=(r + 1) 
-    return answer
+# def solution(food_times, k):
+#     answer = 1
+#     dic = {j+1: t for j,t in enumerate(food_times)}
+#     cl = len(food_times)
+#     r = cl
+#     for _ in range(k):
+#         if cl == 0:
+#             answer = -1
+#             break
+#         while True:
+#             if dic[answer] !=0:
+#                 dic[answer] -=1
+#                 cl -=1
+#                 answer +=1
+#                 answer %=(r + 1)
+#                 break
+#             else:
+#                 answer +=1        
+#                 answer %=(r + 1) 
+#     if answer != -1:
+#         while True:     
+#             if dic[answer] !=0:
+#                 answer +=1
+#                 answer %=(r + 1)
+#                 break
+#             else:
+#                 answer +=1        
+#                 answer %=(r + 1) 
+#     return answer
 
-print(solution([3, 1, 2],5))
+# print(solution([3, 1, 2],5))
