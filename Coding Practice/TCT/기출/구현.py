@@ -247,19 +247,19 @@
 #         print(res)
 
 # 두번째 풀이 조합사용
-from itertools import combinations
-n,m = map(int, input().split())
-mat = [list(map(int, input().split())) for _ in range(n)]
-home = []
-chi = []
-for i in range(n):
-    for j in range(n):
-        if mat[i][j] == 1:
-            home.append([i+1,j+1])
-        if mat[i][j] == 2:
-            chi.append((i+1,j+1))
+# from itertools import combinations
+# n,m = map(int, input().split())
+# mat = [list(map(int, input().split())) for _ in range(n)]
+# home = []
+# chi = []
+# for i in range(n):
+#     for j in range(n):
+#         if mat[i][j] == 1:
+#             home.append([i+1,j+1])
+#         if mat[i][j] == 2:
+#             chi.append((i+1,j+1))
 
-ch_st = []
+# ch_st = []
 # if m ==1:
 #     for i in chi:
 #         tem = []
@@ -284,18 +284,44 @@ ch_st = []
 #     print(res)
 
 # else:
-res = 0
-print(chi)
-ch = list(combinations(chi, m))
-print(ch)
-for i in home:
-    tem = []
-    for j in ch:
-        for k in j:
-            ab = abs(i[0]-k[0]) + abs(i[1]-k[1])
-            tem.append(ab)
-    ch_st.append(tem)
+# res = 0
+# ch = list(combinations(chi, m))
+# for i in home:
+#     tem = []
+#     for j in ch:
+#         for k in j:
+#             ab = abs(i[0]-k[0]) + abs(i[1]-k[1])
+#             tem.append(ab)
+#     ch_st.append(tem)
 
-for i in ch_st:
-    res +=min(i)
-print(res)
+# for i in ch_st:
+#     res +=min(i)
+# print(res)
+
+'''from itertools import combinations
+ 
+## 맵크기(N), 치킨집 최대 선택가능개수(M)
+N, M = map(int, input().split())
+board = [list(map(int, input().split())) for _ in range(N)]
+ 
+## 빈칸(0), 집(1), 치킨집(2)
+house = []
+chicken = []
+for i in range(N):
+    for j in range(N):
+        if board[i][j] == 1: house.append((i, j))
+        elif board[i][j] == 2: chicken.append((i, j))
+ 
+minv = float('inf')
+for ch in combinations(chicken, M):
+    sumv = 0
+    for home in house:
+        sumv += min([abs(home[0]-i[0])+abs(home[1]-i[1]) for i in ch])
+        if minv <= sumv: break
+    if sumv < minv: minv = sumv
+ 
+print(minv)
+
+
+출처: https://juhee-maeng.tistory.com/96 [simPLE]'''
+
