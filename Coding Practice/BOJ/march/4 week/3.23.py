@@ -79,10 +79,31 @@ DP 는 계속해서 봐야겠다.
 5: 1,4 2,3 3,2 4,1 = 10 8 = 18
 6: 
 '''
-n = int(input())
-d = [0]*(n+1)
-d[1], d[2],d[3] = 1,3,5
-for i in range(4,n+1):
-    d[i] = d[i-1] + d[i-2] + d[1]
+# n = int(input())
+# d = [0]*(n+1)
+# d[1], d[2],d[3] = 1,3,5
+# for i in range(4,n+1):
+#     if i%2 == 0:
+#         d[i] = d[i-1] + d[i-3] + d[1]
+#     else:
+#         d[i] = d[i]
 
-print(d[n])
+# print(d[n])
+
+# 3. Boj 2751번 수 정렬하기 2
+# import sys
+# from collections import deque
+# tc = int(sys.stdin.readline().rstrip())
+# li = deque([int(sys.stdin.readline().rstrip()) for _ in range(tc)])
+# li = sorted(li)
+# for i in li:
+#     print(i)
+    
+'''
+리뷰 : 음 틀림으로 되서 풀어봤는데 sort로 풀려서 놀랐다.
+'''
+
+# 4. Boj 18870번 좌표 압축
+n = int(input())
+li = list(map(int, input().split()))
+se = set(li)
