@@ -136,15 +136,19 @@ for _ in range(tc):
             res.append(bug(i,j))
     print(sum(res))'''
 
-    '''
-    아직 못품
-    '''
+'''
+아직 못품
+'''
 
     # 5. 마인크래프트
 n ,m ,k = map(int, input().split())
 li = []
+dic = {i:0 for i in range(257)}
 for i in range(n):
     tem = list(map(int, input().split()))
     for j in tem:
         li.append(j)
-
+        dic[j] +=1
+li.sort()
+while li[0] != li[-1]:
+    

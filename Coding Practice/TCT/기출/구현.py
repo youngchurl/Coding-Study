@@ -109,76 +109,84 @@
 '''
 
 # 11. 뱀 
-# import sys
-# from collections import deque
-# input = sys.stdin.readline
+import sys
+from collections import deque
+input = sys.stdin.readline
 
-# n = int(input())
-# mat = [[0]*(n+1) for _ in range(n+1)]
-# di =[(0,1), (1,0), (0,-1), (-1,0)]
-# apple = int(input())
-# for _ in range(apple):
-#     a,b = map(int, input().split())
-#     mat[a+1][b+1] = 1
-# d = int(input())
-# direction = deque()
-# for _ in range(d):
-#     direction.append(list(map(str, input().rstrip().split())))
+n = int(input())
+mat = [[0]*(n+1) for _ in range(n+1)]
+di =[(0,1), (1,0), (0,-1), (-1,0)] # 방향
+apple = int(input())
 
-# i = 0
-# st = [1,1]
-# t = 0
-# tail = deque()
-# crush = False
-# while True:
-#     # 꼬리 구현
-#     if tail:
-#         for j in range(len(tail)):
-#             if j == 0:
-#                 tail[0] = st
-#             else:
-#                 tail[j] = tail[j-1]
+for _ in range(apple):
+    a,b = map(int, input().split())
+    mat[a+1][b+1] = 1
 
-#     st[0] += di[t][0]
-#     st[1] += di[t][1]
+d = int(input())
+direction = deque()
 
-#     # 사과 구현
-#     if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
-#         if mat[st[0]][st[1]] == 1:
-#             mat[st[0]][st[1]] = 0
-#             tail.append([st[0],st[1]])
-#         else:
-#             if tail:
-#                 tail.popleft()
+for _ in range(d):
+    direction.append(list(map(str, input().rstrip().split())))
 
-#     i +=1
-#     # 게임 종료 조건 구현 꼬리 x
-#     if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
-#         break
+i = 0
+st = [1,1]
+t = 0
+tail = deque()
+crush = False
 
-#     # 꼬리 건들때 게임 종료 조건 구현
-#     if tail:
-#         for k in tail:
-#             if k == st:
-#                 crush = True
+while True:
+    # 꼬리 구현
+    if tail:
+        for j in range(len(tail)):
+            if j == 0:
+                tail[0] = st
+            else:
+                tail[j] = tail[j-1]
 
-#     if crush:
-#         break
-#     # 방향 변환 구현
-#     if direction:
-#         if str(i) == direction[0][0]:
-#             if direction[0][1] == 'D':
-#                 t +=1
-#                 t %=4
-#             else:
-#                 t -=1
-#                 if t == -4:
-#                     t = 0
-#             direction.popleft()
-# if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
-#     print(i)
-# else:
-#     print(i+1)
+    st[0] += di[t][0]
+    st[1] += di[t][1]
+
+    # 사과 구현
+    if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
+        if mat[st[0]][st[1]] == 1:
+            mat[st[0]][st[1]] = 0
+            tail.append([st[0],st[1]])
+
+        else:
+            if tail:
+                tail.popleft()
+
+    i +=1
+    # 게임 종료 조건 구현 꼬리 x
+    if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
+        break
+
+    # 꼬리 건들때 게임 종료 조건 구현
+    if tail:
+        for k in tail:
+            if k == st:
+                crush = True
+
+    if crush:
+        break
+
+    # 방향 변환 구현
+    if direction:
+        if str(i) == direction[0][0]:
+            if direction[0][1] == 'D':
+                t +=1
+                t %=4
+
+            else:
+                t -=1
+                if t == -4:
+                    t = 0
+            direction.popleft()
+
+if st[0] <= 0 or st[0] >= n or st[1] <= 0 or st[1] >= n:
+    print(i)
+else:
+    print(i+1)
 
 '''
 리뷰 : 예제는 풀리는데 런타임에러로 문제해결이 안된다.
@@ -298,7 +306,8 @@
 #     res +=min(i)
 # print(res)
 
-'''from itertools import combinations
+'''
+from itertools import combinations
  
 ## 맵크기(N), 치킨집 최대 선택가능개수(M)
 N, M = map(int, input().split())
@@ -323,5 +332,6 @@ for ch in combinations(chicken, M):
 print(minv)
 
 
-출처: https://juhee-maeng.tistory.com/96 [simPLE]'''
+출처: https://juhee-maeng.tistory.com/96 [simPLE]
+'''
 
