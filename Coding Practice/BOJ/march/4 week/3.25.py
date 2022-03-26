@@ -112,14 +112,22 @@
 '''
 
 # 8. Boj 9461번 파도반 수열
-tc = int(input())
-for _ in range(tc):
-    n = int(input())
-    d = [0]*(n+2)
-    d[1] = 1
-    d[2] = 1
-    d[3] = 1
-    d[4] = 2
-    for i in range(5, n+1):
-        d[i] = d[i-2] + d[i-3]
-    print(d[i])
+# tc = int(input())
+# for _ in range(tc):
+#     n = int(input())
+#     d = [0]*(n+3)
+#     d[1] = 1
+#     d[2] = 1
+#     d[3] = 1
+#     for i in range(4, n+1):
+#         d[i] = d[i-2] + d[i-3]
+#     print(d[n])
+
+'''
+리뷰 : DP 공부를 하면서 index에러와 가장 많이 부딪힌 문제 같은데 앞으로 d 공간 확보할때는
+i-n 될때 n 만큼을 해야된다는 교훈을 얻을 수 있었다.
+'''
+
+# 9. Boj 12865번 평범한 배낭
+n, k =map(int, input().split())
+li = [list(map(int, input().split())) for _ in n]
