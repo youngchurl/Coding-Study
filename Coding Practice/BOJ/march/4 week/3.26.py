@@ -44,3 +44,13 @@
 '''
 리뷰 : 이문제가 안풀려서 BFS를 다시 공부해서 풀었다...
 '''
+
+# 3. Boj 2178번 미로탐색
+
+n,m = map(int, input().split())
+mat = [list(map(int, input())) for _ in range(n)]
+
+def search(x,y,cnt):
+    if x<0 or y<0 or x>=m or y>=n:
+        return
+    
