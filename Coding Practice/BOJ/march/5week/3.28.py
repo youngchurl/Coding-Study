@@ -28,28 +28,28 @@
 '''
 
 # 2. 18111번 마인크래프트
-import sys
-input = sys.stdin.readline
-n, m, b =map(int, input().split())
-mat = [list(map(int, input().rstrip().split())) for _ in range(n)]
+# import sys
+# input = sys.stdin.readline
+# n, m, b =map(int, input().split())
+# mat = [list(map(int, input().rstrip().split())) for _ in range(n)]
 
-height = 0
-res = 1000000000000000000000000000
+# height = 0
+# res = 1000000000000000000000000000
 
-for k in range(257):
-    mini = 0
-    maxi = 0
-    for i in range(n):
-        for j in range(m):
-            if mat[i][j] < k :
-                mini += (k - mat[i][j])
-            else:
-                maxi += (mat[i][j] - k)
-    inven = maxi + b
-    if inven < mini:
-        continue
-    time = 2*maxi + mini
-    if time <= res:
-        res = time
-        height = k
-print(res, height)
+# for k in range(257):
+#     mini = 0
+#     maxi = 0
+#     for i in range(n):
+#         for j in range(m):
+#             if mat[i][j] < k :
+#                 mini += (k - mat[i][j])
+#             else:
+#                 maxi += (mat[i][j] - k)
+#     inven = maxi + b
+#     if inven < mini:
+#         continue
+#     time = 2*maxi + mini
+#     if time <= res:
+#         res = time
+#         height = k
+# print(res, height)
