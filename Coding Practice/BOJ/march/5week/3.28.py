@@ -53,3 +53,18 @@
 #         res = time
 #         height = k
 # print(res, height)
+
+# 3. 2579번 계단 오르기
+import sys
+input = sys.stdin.readline
+n = int(input())
+step = [0]*n
+li = [int(input()) for _ in range(n)]
+li[::-1]
+step[0] = li[0]
+step
+
+cnt = 1
+for i in range(1,n):
+    if cnt !=2:
+        step[i]
