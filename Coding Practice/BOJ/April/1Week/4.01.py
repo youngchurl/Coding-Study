@@ -1,48 +1,30 @@
 # 1.  2579번 계단오르기
-# import sys
-# input = sys.stdin.readline
+'''N = int(input())
 
-# n = int(input())
-# step = [int(input()) for _ in range(n)]
+stair = [0]
+for _ in range(N):
+    stair.append(int(input()))
 
-# d = [0]*(n+1)
-# d[0] = step[0]
-# d[1] = step[0]+step[1]
-# d[2] = max(step[])
+if N == 1:
+    print(stair[1])
+else:
+    dp = [0] * (N+1)
+    dp[1] = stair[1]
+    dp[2] = stair[1] + stair[2] 
 
-# 2. 1260번 DFS와 BFS
-from collections import deque
-n, m, v = map(int, input().split())
-graph = [[] for _ in range(n+1)]
-for _ in range(m):
-    a,b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-visit = [False]*(n+1)
-res = []
-def dfs(graph,s,res):
-    res.append(s)
-    d = [s]
-    visit[s] = True
-    while d:
-        node = d.pop()
-        for i in graph[node]:
-            if visit[i] == False:
-                visit[i] = True
-                dfs(graph,i,res)
-dfs(graph,v,res)
-print(*res)
-visit = [False]*(n+1)
-res2 = []
-def bfs(graph,s,res2):
-    d = deque([s])
-    visit[s] = True
-    while d:
-        node = d.popleft()
-        res2.append(node)
-        for i in graph[node]:
-            if visit[i] == False:
-                visit[i] = True
-                d.append(i)
-bfs(graph,v,res2)
-print(*res2)
+    for i in range(3, N+1):
+        dp[i] = max(dp[i-3]+stair[i-1]+stair[i], dp[i-2]+stair[i])  
+
+    print(dp[N])
+
+'''
+
+# 2. 2309번 일곱 난쟁이
+from itertools import combinations
+li = [int(input()) for _ in range(9)]
+res = list(combinations(li,7))
+for i in res:
+    if sum(i) == 100:
+        r = sorted(i)
+        print(*r)
+        exit()
