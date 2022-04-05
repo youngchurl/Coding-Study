@@ -28,5 +28,3 @@ for i in res:
         r = sorted(i)
         print(*r)
         exit()
-        
-print('sjafl')
