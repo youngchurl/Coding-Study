@@ -43,7 +43,8 @@ if li[-1] < x:
 else:
     a = minin(li,x)
     b = maxin(li,x)
-    print(b-a-1)'''
+    print(b-a-1)
+'''
 
 # 28 고정점 찾기
 n = int(input())
