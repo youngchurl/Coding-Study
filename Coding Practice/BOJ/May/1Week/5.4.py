@@ -18,9 +18,9 @@
 # 1912번 연속합
 
 n = int(input())
-res = -1000
+
 li = list(map(int, input().split()))
+res = [li[0]]
 for i in range(n-1):
-    tmd = li[i]+li[i+1]
-    res = max(tmd,res)
-print(res)
+    res.append(max(res+li[i+1],li[i+1]))
+print(max(res))
