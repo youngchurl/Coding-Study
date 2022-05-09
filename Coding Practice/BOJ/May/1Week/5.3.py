@@ -36,7 +36,7 @@ else:
 # 두번째
 
 
-'''from itertools import permutations
+from itertools import permutations
 import sys
 
 input = sys.stdin.readline
@@ -90,6 +90,6 @@ else:
         print('-1')
         
     else:
-        print(d[n][k-1])'''
+        print(d[n][k-1])
 
 
