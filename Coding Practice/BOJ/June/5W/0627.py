@@ -17,37 +17,17 @@ n = int(input())
 
 print(fib(n),n-2)'''
 
-# 9184 신나는 함수 실행
+# 2477 참외밭
+'''
+동쪽 : 1
+서쪽 : 2
+남쪽 : 3
+북쪽 : 4
+'''
 
-w = [[[0 for _ in range(21)] for _ in range(21)] for _ in range(21)]
-w[0][0][0] = 1
-w[0][0][-1] = 1
-w[0][-1][0] = 1
-w[-1][0][0] = 1
-w[0][-1][-1] = 1
-w[-1][-1][0] = 1
-w[-1][0][-1] = 1
-w[-1][-1][-1] = 1
-for k in range(21):
-    for j in range(21):
-        for i in range(21):
-            if i==0 and j ==0 and k ==0:
-                pass
-            if i<j and j<k:
-                w[i][j][k] = w[i][j][k-1]+w[i][j-1][k-1]-w[i][j-1][k]
-            else:
-                w[i][j][k] = w[i-1][j][k] + w[i-1][j-1][k] + w[i-1][j][k-1] - w[i][j-1][k]
+d = [0,0,0,0,0]
 
-while True:
-    a,b,c = map(int, input().split())
-    res = 0
-    if a == -1 and b == -1 and c == -1:
-        break
-    elif a<=0 or b<=0 or c<=0:
-        res = 1
-    elif a>20 or b>20 or c>20:
-        res = w[20][20][20]
-    else:
-        res = w[a][b][c]
+k = int(input())
+for _ in range(6):
+    di, m =map(int, input().split())
     
-    print(f'w({a}, {b}, {c}) = {res}')
