@@ -19,8 +19,14 @@ for i in range(6):
     if dir[li[i][0]-1] == 1:
         ch[i] +=cnt
         cnt +=1
+
 big_rec = li[ch.index(1)][1]*li[ch.index(2)][1]
-small_rec = li[(ch.index(2)+2)%6][1]*li[(ch.index(2)+3)%6][1]
+
+if ch.index(2) != 5:
+    small_rec = li[(ch.index(2)+2)%6][1]*li[(ch.index(2)+3)%6][1]
+
+else:
+    small_rec = li[(ch.index(1)+2)%6][1]*li[(ch.index(2)-2)%6][1]  
 
 res = big_rec - small_rec
 print(res*n)
